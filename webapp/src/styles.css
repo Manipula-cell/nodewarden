@@ -875,13 +875,39 @@ input[type='file'].input::file-selector-button:hover {
 }
 
 .list-title {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   color: #175ddc;
   font-size: 15px;
   font-weight: 700;
+  min-width: 0;
+}
+
+.list-title-text {
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.list-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: #475569;
+  background: #e2e8f0;
+  flex-shrink: 0;
+}
+
+.list-badge.danger {
+  color: #fff;
+  background: var(--danger);
 }
 
 .list-sub {
@@ -1121,6 +1147,14 @@ input[type='file'].input::file-selector-button:hover {
   gap: 8px;
   flex-wrap: wrap;
   flex-shrink: 0;
+}
+
+.exposed-status {
+  color: #475569;
+}
+
+.exposed-status.danger {
+  color: var(--danger);
 }
 
 .attachment-list {
@@ -1750,6 +1784,12 @@ input[type='file'].input::file-selector-button:hover {
 }
 
 .toast-item.error {
+  border-color: #f2b8c1;
+  background: #fde7eb;
+  color: #9f1239;
+}
+
+.toast-item.warning {
   border-color: #f2b8c1;
   background: #fde7eb;
   color: #9f1239;
